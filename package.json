@@ -2,7 +2,7 @@
   "name": "sell",
   "version": "1.0.0",
   "description": "sell app",
-  "author": "neusc <levisc829@163.com>",
+  "author": "neusc <neusc829@163.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
