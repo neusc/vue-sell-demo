@@ -36,11 +36,13 @@
         </li>
       </ul>
     </div>
+    <shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
+  import shopcart from 'components/shopcart/shopcart';
 
   const ERR_OK = 0;
 
@@ -85,9 +87,9 @@
     },
     methods: {
       selectMenu(index, event) {
-          if (!event._constructed) {
-              return;
-          }
+        if (!event._constructed) {
+            return;
+        }
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
         let el = foodList[index];
         this.foodsScroll.scrollToElement(el, 300);
@@ -104,6 +106,7 @@
           this.scrollY = Math.abs(Math.round(pos.y));
         });
       },
+
       _calculateHeight() {
         let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
         let height = 0;
@@ -114,6 +117,9 @@
           this.listHeight.push(height);
         }
       }
+    },
+    components: {
+        shopcart
     }
   };
 </script>
